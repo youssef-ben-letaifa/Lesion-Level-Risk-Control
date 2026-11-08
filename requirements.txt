@@ -27,3 +27,4 @@ plotly>=5.14.0
 # Interactive Clinical Web Interface
 flask>=2.3.0
 flask-cors>=4.0.0
+
