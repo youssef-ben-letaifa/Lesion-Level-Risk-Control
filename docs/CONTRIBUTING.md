@@ -55,3 +55,4 @@ To propose a new prediction family:
    ```
 2. Commit changes with clear, descriptive messages adhering to conventional commit format.
 3. Push to your branch and open a Pull Request using `.github/pull_request_template.md`.
+

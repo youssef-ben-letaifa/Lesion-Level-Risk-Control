@@ -64,3 +64,4 @@ def test_interface_api_endpoints():
         assert res_slice.status_code == 200
         assert res_slice.content_type == "image/jpeg"
         assert len(res_slice.data) > 0
+
