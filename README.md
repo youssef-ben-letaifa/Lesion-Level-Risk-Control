@@ -4,12 +4,29 @@
 [![License: MIT](https://img.shields.io/badge/Code_License-MIT-blue.svg)](LICENSE)
 [![Data License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Data_License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Tests: 19 Passed](https://img.shields.io/badge/tests-19%20passed%20%7C%202%20skipped-brightgreen.svg)](tests/)
-[![Study Stage: Protocol Frozen](https://img.shields.io/badge/Study_Stage-Protocol_Frozen-success.svg)](PHASE0_REPORT.md)
+[![Tests: 22 Passed](https://img.shields.io/badge/tests-22%20passed%20%7C%202%20skipped-brightgreen.svg)](tests/)
+[![Study Stage: Protocol Frozen](https://img.shields.io/badge/Study_Stage-Protocol_Frozen-success.svg)](docs/reports/PHASE0_REPORT.md)
 [![Pre-Registration SHA256](https://img.shields.io/badge/Pre--Registration-Frozen_Config-blueviolet.svg)](frozen_config.json)
+[![Citation: CFF](https://img.shields.io/badge/cite-CITATION.cff-informational.svg)](CITATION.cff)
 
 > **Official Benchmark Repository for Pre-Registered Conformal Risk Certification on KiTS23**  
 > *Establishing finite-sample statistical safety guarantees for 3D deep neural network segmentation in clinical nephrology and oncology.*
+
+---
+
+## Table of Contents
+1. [Clinical Motivation & Problem Formulation](#1-clinical-motivation--problem-formulation)
+2. [Theoretical Framework & Operational Definitions](#2-theoretical-framework--operational-definitions)
+3. [System Architecture & Prediction Families (F0–F5)](#3-system-architecture--prediction-families-f0f5)
+4. [Comprehensive Benchmark Results](#4-comprehensive-benchmark-results)
+5. [Stress-Testing Under Domain Shift & Annotator Repeats](#5-stress-testing-under-domain-shift--annotator-repeats)
+6. [Interactive Clinical PACS Web Viewer](#6-interactive-clinical-pacs-web-viewer)
+7. [Repository Layout & Navigation](#7-repository-layout--navigation)
+8. [Installation & Quick Start](#8-installation--quick-start)
+9. [Automated Verification & Test Suite](#9-automated-verification--test-suite)
+10. [Reproducibility & Cloud Execution](#10-reproducibility--cloud-execution)
+11. [Citation & Academic Attribution](#11-citation--academic-attribution)
+12. [Licenses](#12-licenses)
 
 ---
 
@@ -69,7 +86,7 @@ Given an exchangeable calibration set $\mathcal{D}_{\mathrm{cal}} = \{(X_i, Y_i)
 
 ---
 
-## 3. System Architecture & Prediction Families
+## 3. System Architecture & Prediction Families (F0–F5)
 
 ![System Architecture](assets/system_architecture.png)
 *Figure 2: End-to-end full-stack system architecture across data partitioning, nnU-Net feature extraction, statistical risk certification engine, cryptographic label vault, and interactive PACS clinical viewer.*
@@ -179,7 +196,7 @@ The KiTS benchmark contains 300 cases segmented independently by three expert an
 
 ---
 
-## 6. Interactive Clinical Web Viewer
+## 6. Interactive Clinical PACS Web Viewer
 
 An interactive clinical visualization and risk exploration tool is included out-of-the-box. It provides multi-planar slice inspection, side-by-side ground truth vs AI segmentations, and dynamic risk thresholding.
 
@@ -188,10 +205,10 @@ An interactive clinical visualization and risk exploration tool is included out-
 
 ### Launching the Interface
 ```bash
-# Option 1: Direct Python launch
+# Option 1: Direct Python CLI launch
 python run_interface.py
 
-# Option 2: Windows batch script
+# Option 2: Windows quickstart script
 start_interface.bat
 ```
 Then navigate to `http://localhost:5000` in any web browser.
@@ -213,51 +230,54 @@ Then navigate to `http://localhost:5000` in any web browser.
 
 ---
 
-## 7. Repository Structure
+## 7. Repository Layout & Navigation
 
 ```
-.
-├── assets/                            # High-resolution publication figures & UI previews
-│   ├── calibration_behavior.png       # Risk-burden calibration dynamics
-│   ├── dataset_distributions.png      # KiTS23 cohort demographics & histologies
-│   ├── f0_f4_f5_comparison.png        # Qualitative CT slice comparison of F0 vs F4 vs F5
-│   ├── froc_curve.png                 # Free-Response ROC curve
-│   ├── interface_preview.png          # Clinical PACS viewer interface screenshot
-│   ├── inter_repeat_dice.png          # Module C multi-reader annotator agreement
-│   ├── lesion_coverage_gamma.png      # Operational coverage definition under gamma
-│   ├── operating_points_frontier.png  # Pareto efficiency frontier
-│   ├── resplits_boxplots.png          # 1,000 empirical re-splits coverage stability
-│   ├── subgroup_risks.png             # Module B natural domain shift risks
-│   ├── system_architecture.png        # Full-stack 4-layer system architecture
-│   ├── training_curves.png            # Seeded 100-epoch nnU-Net training curves
-│   └── tumor_size_stratified.png      # Performance stratified by T1a/T1b/T2 tumor size
-├── configs/                           # Experiment tier configurations
+Lesion-Level-Risk-Control/
+├── .github/                           # CI/CD automation & issue/PR templates
+│   ├── workflows/tests.yml            # Automated PyTest matrix across Python 3.10 & 3.11
+│   └── pull_request_template.md       # Standardized scientific pull request template
+├── assets/                            # Vector PDFs & high-resolution 300 DPI publication figures
+├── configs/                           # Pre-registered YAML experiment specifications
 │   ├── smoke.yaml                     # Rapid 20-case verification pipeline
 │   ├── tier1.yaml                     # ResEnc-M 100-epoch production run
 │   └── full.yaml                      # 10-member multi-architecture full ensemble
-├── dataset/                           # Dataset metadata
-│   └── kits23.json                    # Complete clinical metadata (489 cases, 40 fields)
-├── interface/                         # Interactive Flask clinical web application
-│   ├── app.py                         # Flask server with REST endpoints for volume/metrics
-│   ├── templates/index.html           # Responsive HTML5/Tailwind/Canvas clinical viewer
-│   └── static/                        # Web assets and icons
-├── kits23/                            # Official KiTS23 challenge evaluation package
-│   ├── configuration/                 # Standard label hierarchies & HEC mapping
-│   └── evaluation/                    # Official hierarchical Dice & surface distance metrics
+├── dataset/                           # Dataset hierarchy & clinical metadata
+│   └── kits23.json                    # Complete patient metadata (489 cases, 40 clinical fields)
+├── docs/                              # Formal scientific auditing logs and documentation
+│   ├── reports/                       # Pre-registration and protocol reports
+│   │   ├── PHASE0_REPORT.md           # Phase-0 pre-registration and frozen gate report
+│   │   ├── INSPECTION_REPORT.md       # Empirical dataset inspection facts & voxel distributions
+│   │   └── STATUS.md                  # Methodological rules and phase-gate registry
+│   ├── CHANGELOG.md                   # Chronological versioning and change ledger
+│   └── CONTRIBUTING.md                # Research code of conduct and contribution guidelines
+├── interface/                         # Interactive PACS clinical web viewer application
+│   ├── app.py                         # High-performance Flask REST API for slice streaming
+│   ├── templates/index.html           # PACS client with dynamic HU windowing & TNM staging
+│   └── static/                        # Clinical icons and styles
+├── kits23/                            # Official KiTS23 evaluation & challenge metric toolkit
 ├── models/                            # Model checkpoints directory (see models/README.md)
-│   └── README.md                      # Instructions for downloading pre-trained nnU-Net weights
-├── outputs/                           # Empirical study results, tables, and HTML reports
-│   ├── TIER1/                         # TIER-1 production benchmark results
-│   ├── SMOKE/                         # Rapid verification benchmark results
+│   └── README.md                      # Checkpoint layout & pre-trained weight download links
+├── notebooks/                         # Google Colab & Jupyter cloud reproduction notebooks
+│   ├── colab_notebook.ipynb           # Ready-to-run GPU training notebook
+│   ├── colab_full_ensemble.ipynb      # Multi-architecture ensemble notebook
+│   ├── colab_spec.md                  # Markdown cell specification
+│   └── colab_full_spec.md             # Full ensemble specification
+├── outputs/                           # Numerical ledgers, benchmark tables, and executive HTML reports
+│   ├── TIER1/                         # TIER-1 production benchmark outputs
+│   ├── SMOKE/                         # Rapid verification benchmark outputs
 │   ├── numbers.json                   # Numerical ledger with cryptographic run hash
-│   └── report.html                    # Interactive standalone HTML executive report
-├── predictions_s101/                  # Sample 3D segmentations for immediate web exploration
-├── renal_cert/                        # Core risk certification package
+│   ├── report.html                    # Standalone interactive HTML executive report
+│   ├── inspection_facts.json          # Geometric fingerprints and dataset audit facts
+│   ├── planted_fault_report.csv       # Verification ledger for deliberate fault injection
+│   └── training_curves_100ep.csv      # 100-epoch seeded training loss & Dice trajectories
+├── predictions_s101/                  # Precomputed 3D segmentations for zero-GPU web exploration
+├── renal_cert/                        # Core mathematical risk certification library
 │   ├── certify.py                     # Conformal Risk Control, Split-Conformal & LTT bounds
 │   ├── config.py                      # Strongly typed dataclasses and YAML loaders
-│   ├── data/                          # Dataset audit, conversion to nnU-Net format
+│   ├── data/                          # Dataset audit and nnU-Net format conversion
 │   ├── families.py                    # Prediction families F0–F5 implementation
-│   ├── infer/                         # Streaming inference & memory-efficient reduction
+│   ├── infer/                         # Streaming reduction & memory-efficient inference
 │   ├── label_vault.py                 # Cryptographic security guard for Cal/Test splits
 │   ├── lesions.py                     # 3D connected-component lesion extraction & coverage
 │   ├── metrics.py                     # Official HEC Dice, sensitivity, ECE, Brier, NLL
@@ -266,37 +286,33 @@ Then navigate to `http://localhost:5000` in any web browser.
 │   ├── stats.py                       # Cluster bootstrap & paired Wilcoxon tests with Holm
 │   ├── train/                         # Custom seeded 100-epoch nnU-Net trainers
 │   └── viz/                           # Color-blind safe plotting routines
-├── scripts/                           # Reproducibility runners and utility scripts
+├── results/                           # Experiment markers and reproducibility directory
+├── scripts/                           # Reproducibility runners and figure generators
 │   ├── dry_run_local.py               # Local CPU dry-run on available KiTS cases
-│   ├── generate_publication_figures.py # Script generating Figures 1–6 into assets/
-│   ├── generate_revision_figures.py   # Script generating revision figures into assets/
+│   ├── generate_publication_figures.py# Script regenerating Figures 1–6 into assets/
+│   ├── generate_revision_figures.py   # Script regenerating revision figures into assets/
 │   ├── inspect_dataset.py             # Empirical dataset integrity scanner
 │   ├── make_colab_notebook.py         # Google Colab notebook compiler
 │   └── run_pipeline_step.py           # Modular pipeline step runner
-├── tests/                             # Unit tests, mutation tests, and planted-fault verifications
+├── tests/                             # Unit tests, property tests, mutation, and interface tests
 │   ├── test_certification.py          # Math proofs: CRC, Split-conformal, binomial inversion
 │   ├── test_coverage_detection.py     # Lesion intersection & monotonicity assertions
 │   ├── test_dataset.py                # NIfTI affine, voxel spacing, and label integrity
+│   ├── test_interface.py              # Automated REST API endpoints and volume discovery tests
 │   ├── test_mutation.py               # Mutation testing (fault injection kill rate > 90%)
-│   ├── test_planted_faults.py         # Detection of deliberate methodological violations
+│   ├── test_planted_faults.py         # Anti-leakage cryptographic guards validation
 │   └── test_splits_adjustment.py      # Split leakage prevention tests
 ├── work/                              # Experimental reduction tables & intermediate states
 │   ├── calibration_summary.json       # Operating point thresholds and certified risk tables
 │   ├── splits.json                    # Canonical 60/20/20 patient assignments
 │   └── reduction_tables/              # Lesion-level coverage and patient review burden CSVs
-├── .github/workflows/tests.yml        # Automated GitHub Actions CI workflow
-├── colab_notebook.ipynb               # Ready-to-run Google Colab GPU training notebook
-├── colabfull_notebook.ipynb           # Complete multi-architecture ensemble notebook
+├── CITATION.cff                       # Machine-readable academic citation metadata
 ├── frozen_config.json                 # Pre-registered frozen configuration & SHA256 checksum
-├── INSPECTION_REPORT.md               # Empirical dataset inspection facts and statistics
 ├── LICENSE                            # MIT Open Source License
-├── PHASE0_REPORT.md                   # Phase-0 validation gate report
-├── planted_fault_report.csv           # Planted-fault integrity test results
-├── requirements.txt                   # Complete Python environment dependencies
-├── run_interface.py                   # Entry point for the web interface
+├── requirements.txt                   # Production Python environment dependencies
+├── run_interface.py                   # CLI entrypoint for clinical web viewer
 ├── setup.py                           # Python package setup file
-├── start_interface.bat                # Windows quickstart launcher
-└── STATUS.md                          # Non-negotiable rules and phase gate log
+└── start_interface.bat                # Windows quickstart launcher
 ```
 
 ---
@@ -330,13 +346,13 @@ pip install -e ./kits23
 
 ---
 
-## 9. Verification & Automated Test Suite
+## 9. Automated Verification & Test Suite
 
-Verify the mathematical proofs, conformal algorithms, and pipeline integrity locally on CPU:
+Verify mathematical proofs, conformal calibration algorithms, anti-leakage guards, and web endpoints locally on CPU:
 
 ```bash
-# Run the complete automated test suite (19 passed, 2 skipped)
-pytest tests -v
+# Run the complete automated test suite (22 passed, 2 skipped)
+pytest tests/ -v
 
 # Run planted-fault detection tests (verifies anti-leakage cryptographic guards)
 python tests/test_planted_faults.py
@@ -347,11 +363,11 @@ python scripts/dry_run_local.py
 
 ---
 
-## 10. Reproducing Experiments & Cloud Training
+## 10. Reproducibility & Cloud Execution
 
 ### Google Colab GPU Execution
 For training the deep neural models or reproducing the full ensemble pipeline on cloud GPUs:
-1. Open [`colab_notebook.ipynb`](colab_notebook.ipynb) in [Google Colab](https://colab.research.google.com/).
+1. Open [`notebooks/colab_notebook.ipynb`](notebooks/colab_notebook.ipynb) in [Google Colab](https://colab.research.google.com/).
 2. Select an **A100 GPU** or **V100/T4 GPU** runtime.
 3. Execute the cells sequentially:
    * **Cells 1–5:** Setup environment, extract data, verify PyTorch/CUDA.
@@ -362,7 +378,7 @@ For training the deep neural models or reproducing the full ensemble pipeline on
    * **Cells 19–20:** Report generation, figure compilation, and archive export.
 
 ### Recompiling Publication Figures
-All publication figures can be regenerated from the experimental reduction tables:
+All publication figures can be regenerated directly into `assets/`:
 ```bash
 python scripts/generate_publication_figures.py
 python scripts/generate_revision_figures.py
@@ -370,11 +386,19 @@ python scripts/generate_revision_figures.py
 
 ---
 
-## 11. Citation & Attribution
+## 11. Citation & Academic Attribution
 
 If you use this benchmark, methodology, or codebase in your research, please cite:
 
 ```bibtex
+@article{benletaifa2026certifying,
+  title={Certifying Renal-Mass Detection in CT: Lesion-Level Risk Control Under Annotator and Acquisition Variability},
+  author={Ben Letaifa, Youssef},
+  journal={Medical AI Research Benchmark},
+  year={2026},
+  url={https://github.com/youssef-ben-letaifa/Lesion-Level-Risk-Control}
+}
+
 @article{heller2023kits21,
   title={The KiTS21 Challenge: Automatic segmentation of kidneys, renal tumors, and renal cysts in corticomedullary-phase CT},
   author={Heller, Nicholas and Isensee, Fabian and Engelhardt, Sandy and others},

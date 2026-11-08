@@ -38,7 +38,8 @@ palette = {
 }
 
 print("[1/8] Generating training_curves.png ...")
-train_df = pd.read_csv("training_curves_100ep.csv")
+train_csv = "outputs/training_curves_100ep.csv" if os.path.exists("outputs/training_curves_100ep.csv") else "training_curves_100ep.csv"
+train_df = pd.read_csv(train_csv)
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.2))
 
 # Subplot 1: Losses

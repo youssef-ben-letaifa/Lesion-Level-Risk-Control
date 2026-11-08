@@ -79,6 +79,10 @@ def md_to_notebook(md_path: Path, ipynb_path: Path):
 
 if __name__ == "__main__":
     root = Path(__file__).resolve().parent.parent
-    md_file = root / "colab.md"
-    ipynb_file = root / "colab_notebook.ipynb"
+    nb_dir = root / "notebooks"
+    nb_dir.mkdir(exist_ok=True)
+    
+    # Check notebooks/colab_spec.md or root/colab.md
+    md_file = nb_dir / "colab_spec.md" if (nb_dir / "colab_spec.md").exists() else root / "colab.md"
+    ipynb_file = nb_dir / "colab_notebook.ipynb"
     md_to_notebook(md_file, ipynb_file)

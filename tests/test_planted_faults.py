@@ -176,6 +176,6 @@ def run_all_planted_fault_checks_and_save_report(output_csv: Path) -> pd.DataFra
 
 
 if __name__ == "__main__":
-    report_path = Path("planted_fault_report.csv")
+    report_path = Path("outputs/planted_fault_report.csv")
     df_rep = run_all_planted_fault_checks_and_save_report(report_path)
     print(f"Generated {report_path}:\n", df_rep[["fault_id", "planted_fault", "observed_outcome", "status"]])

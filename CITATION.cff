@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, methodology, or codebase in your research, please cite it as below."
+title: "Certifying Renal-Mass Detection in CT (KiTS23): Finite-Sample Lesion-Level Risk Control under Natural Distribution Shift and Annotator Variability"
+authors:
+  - family-names: "Ben Letaifa"
+    given-names: "Youssef"
+    email: "ben.letaifa.youssef@outlook.com"
+repository-code: "https://github.com/youssef-ben-letaifa/Lesion-Level-Risk-Control"
+url: "https://github.com/youssef-ben-letaifa/Lesion-Level-Risk-Control"
+license: "MIT"
+date-released: "2026-11-08"
+version: "1.0.0"
+keywords:
+  - "Conformal Prediction"
+  - "Conformal Risk Control"
+  - "Renal Cell Carcinoma"
+  - "KiTS23"
+  - "nnU-Net"
+  - "Distribution-Free Guarantees"
+  - "Medical Image Segmentation"
+  - "Finite-Sample Safety"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Ben Letaifa"
+      given-names: "Youssef"
+  title: "Certifying Renal-Mass Detection in CT: Lesion-Level Risk Control Under Annotator and Acquisition Variability"
+  year: 2026
+  journal: "Medical AI Research Benchmark"
