@@ -25,3 +25,4 @@ You can train new models using the provided Google Colab notebooks (`colab_noteb
 
 - **Google Drive / Zenodo**: [KiTS23 Model Weights Archive](https://github.com) *(Insert release URL)*
 - **Interactive Interface**: The web viewer (`python run_interface.py`) works immediately with precomputed predictions in `predictions_s101/` even before downloading full raw weights.
+
