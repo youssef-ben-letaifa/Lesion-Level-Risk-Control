@@ -1,0 +1,71 @@
+# Tier 1 configuration: ResEnc-M only
+# Purpose: Phase 0 5-fold CV + Core Pool 5 seeds of ResEnc-M
+tier: TIER1
+
+paths:
+  drive_root: /content/drive/MyDrive/KiTS23_Cert
+  data_dir: /content/dataset
+  dataset_zip: /content/dataset and kits23.zip
+  work_dir: /content/work
+  results_dir: /content/results
+  outputs_dir: /content/drive/MyDrive/KiTS23_Cert/outputs
+  logs_dir: /content/drive/MyDrive/KiTS23_Cert/logs
+  nnunet_raw: /content/work/nnUNet_raw
+  nnunet_preprocessed: /content/work/nnUNet_preprocessed
+  nnunet_results: /content/drive/MyDrive/KiTS23_Cert/results/nnUNet_results
+
+splits:
+  train_ratio: 0.60
+  cal_ratio: 0.20
+  test_ratio: 0.20
+  random_seed: 20261026
+  max_cases: 200  # Exactly 200 cases in the study as requested
+
+model_pool:
+  dataset_name: Dataset501_KiTS23_Train
+  dataset_id: 501
+  configuration: 3d_fullres
+  num_epochs: 100  # Exact user constraint: 100 epochs
+  members:
+    - name: ResEnc_M_seed1
+      preset: ResEnc_M
+      seed: 101
+      trainer_name: nnUNetTrainer_KiTS23_100ep_s101
+      fold: "all"
+    - name: ResEnc_M_seed2
+      preset: ResEnc_M
+      seed: 102
+      trainer_name: nnUNetTrainer_KiTS23_100ep_s102
+      fold: "all"
+    - name: ResEnc_M_seed3
+      preset: ResEnc_M
+      seed: 103
+      trainer_name: nnUNetTrainer_KiTS23_100ep_s103
+      fold: "all"
+    - name: ResEnc_M_seed4
+      preset: ResEnc_M
+      seed: 104
+      trainer_name: nnUNetTrainer_KiTS23_100ep_s104
+      fold: "all"
+    - name: ResEnc_M_seed5
+      preset: ResEnc_M
+      seed: 105
+      trainer_name: nnUNetTrainer_KiTS23_100ep_s105
+      fold: "all"
+
+grid:
+  num_lambda_points: 60
+  min_threshold: 1.0e-6
+  max_threshold: 0.5
+  num_radius_points: 41
+  tau_min: 0.35
+  beta_f3: 1.0
+
+cert:
+  alpha_levels: [0.05, 0.10]
+  gamma_primary: 0.50
+  gamma_sensitivity: [0.10, 0.90]
+  fp_budget: 2.0
+  delta_ltt: 0.10
+  num_resplits: 1000
+  bootstrap_samples: 1000

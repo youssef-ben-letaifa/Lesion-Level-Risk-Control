@@ -1,0 +1,6 @@
+{
+  "git_hash": "git_hash_untracked_local",
+  "F1_split_conformal_a10_risk": 0.08,
+  "F2_split_conformal_a5_risk": 0.04,
+  "baseline_hec2_dice": 0.82
+}

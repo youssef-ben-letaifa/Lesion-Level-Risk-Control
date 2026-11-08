@@ -1,0 +1,6 @@
+subgroup_column,group_value,n_patients,status,realized_patient_risk,realized_lesion_risk,mean_fp_lesions
+cohort,KiTS21,8,EXPLORATORY,0.0,0.0,0.0
+size_bin,medium_4_7cm,2,EXPLORATORY,0.0,0.0,0.0
+size_bin,small_le_4cm,6,EXPLORATORY,0.0,0.0,0.0
+hist_group,clear_cell_rcc,5,EXPLORATORY,0.0,0.0,0.0
+hist_group,other_or_benign,3,EXPLORATORY,0.0,0.0,0.0

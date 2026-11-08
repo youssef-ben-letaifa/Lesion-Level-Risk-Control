@@ -1,0 +1,74 @@
+{
+  "F0_sc_alpha_0.05": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F0_sc_alpha_0.1": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F1_sc_alpha_0.05": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F1_sc_alpha_0.1": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F2_sc_alpha_0.05": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F2_sc_alpha_0.1": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F3_sc_alpha_0.05": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F3_sc_alpha_0.1": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F4_sc_alpha_0.05": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F4_sc_alpha_0.1": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F5_sc_alpha_0.05": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  },
+  "F5_sc_alpha_0.1": {
+    "is_feasible": false,
+    "lambda_star": null,
+    "emp_risk": 1.0,
+    "floor": 0.0
+  }
+}

@@ -1,0 +1,16 @@
+histology,count
+clear_cell_rcc,310
+papillary_rcc,45
+chromophobe_rcc,38
+oncocytoma,26
+transitional_cell_carcinoma,17
+clear_cell_papillary,12
+other,12
+angiomyolipoma,8
+nan,6
+rcc_unclassified,4
+mest,3
+wilms_tumor,3
+spindle_cell_neoplasm,2
+multilocular_cystic_rcc,2
+cyst,1

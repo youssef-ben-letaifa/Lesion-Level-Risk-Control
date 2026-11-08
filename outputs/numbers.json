@@ -1,0 +1,15 @@
+{
+  "git_hash": "git_hash_untracked_local",
+  "F0_split_conformal_a5_risk": 1.0,
+  "F0_split_conformal_a10_risk": 1.0,
+  "F1_split_conformal_a5_risk": 1.0,
+  "F1_split_conformal_a10_risk": 1.0,
+  "F2_split_conformal_a5_risk": 1.0,
+  "F2_split_conformal_a10_risk": 1.0,
+  "F3_split_conformal_a5_risk": 1.0,
+  "F3_split_conformal_a10_risk": 1.0,
+  "F4_split_conformal_a5_risk": 1.0,
+  "F4_split_conformal_a10_risk": 1.0,
+  "F5_split_conformal_a5_risk": 1.0,
+  "F5_split_conformal_a10_risk": 1.0
+}

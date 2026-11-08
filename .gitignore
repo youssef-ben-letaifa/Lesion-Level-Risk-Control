@@ -1,0 +1,99 @@
+# ==============================================================================
+# KiTS23 Lesion-Level Risk Certification - .gitignore
+# ==============================================================================
+
+# --- Python & Bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Testing & Quality Assurance ---
+.cache
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+nosetests.xml
+coverage.xml
+
+# --- OS & Editor Files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints/
+
+# --- Environment Configurations ---
+.env
+.venv
+env/
+venv/
+ENV/
+
+# --- Large Medical Datasets (>100MB / Gigabytes) ---
+# Patient CT scans and volumetric NIfTIs must be downloaded separately
+dataset/case_*
+dataset/*/*.nii.gz
+dataset/*/*imaging.nii.gz
+dataset/*/*segmentation.nii.gz
+dataset/*/instances/
+dataset/*/raw/
+dataset and kits23/
+*.zip
+*.tar
+*.tar.gz
+
+# Retain dataset metadata
+!dataset/kits23.json
+
+# --- Heavy Model Weights & Intermediate Arrays (>100MB) ---
+# Raw .npz probability cubes and PyTorch checkpoints exceed GitHub limits
+Training Result/
+*.npz
+*.pth
+*.pt
+*.pkl
+*.bin
+
+# Preserve directory structure
+!models/.gitkeep
+!results/.gitkeep
+
+# Allow lightweight clinical validation sample predictions for web viewer (<3MB total)
+!predictions_s101/*.nii.gz
+
+# --- Temporary Logs & Pipeline Markers ---
+*.marker
+*.log
+logs/test_unlock_log.jsonl

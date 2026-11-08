@@ -1,0 +1,5 @@
+fault_id,planted_fault,expected_behavior,observed_outcome,status
+FAULT_01,Drop +1 finite-sample correction in rank formula,Validity checker throws AssertionError on rank mismatch,FAIL_CAUGHT_AS_EXPECTED,PASS
+FAULT_02,Calibrate using test labels directly,Security guard raises PermissionError,FAIL_CAUGHT_AS_EXPECTED,PASS
+FAULT_03,Use IoU-based non-monotone loss with CRC,Monotonicity checker raises ValueError,FAIL_CAUGHT_AS_EXPECTED,PASS
+FAULT_04,Pool lesions across patients (violating patient clustering),Checker flags unit mismatch and raises AssertionError,FAIL_CAUGHT_AS_EXPECTED,PASS

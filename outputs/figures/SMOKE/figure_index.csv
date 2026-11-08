@@ -1,0 +1,2 @@
+figure_id,title,generating_script,data_csv,png_path,split_used,n,tier,description
+C1_REPEAT_DICE,Module C: Multi-Reader Inter-Repeat Agreement (SMOKE),repeats.py:generate_module_c_figures,C:\Users\Sara\Desktop\Medical AI Research\kits23-main\outputs\figures\SMOKE\C1_inter_repeat_dice_SMOKE.csv,C:\Users\Sara\Desktop\Medical AI Research\kits23-main\outputs\figures\SMOKE\C1_inter_repeat_dice_SMOKE.png,REPEATS,30,SMOKE,"Distribution of pairwise Dice agreement across reader repeats 1, 2, and 3"

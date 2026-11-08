@@ -1,0 +1,312 @@
+{
+  "total_cases": 489,
+  "cohort_kits21": 300,
+  "cohort_kits23": 189,
+  "has_imaging": 0,
+  "has_seg": 489,
+  "has_instances": 489,
+  "ge2_repeats": 301,
+  "ge3_repeats": 300,
+  "sample_headers": [
+    {
+      "case": "case_00000",
+      "shape": [
+        611,
+        512,
+        512
+      ],
+      "spacing": [
+        0.5,
+        0.92,
+        0.92
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "case": "case_00010",
+      "shape": [
+        50,
+        512,
+        512
+      ],
+      "spacing": [
+        3.0,
+        0.758,
+        0.758
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "case": "case_00050",
+      "shape": [
+        96,
+        512,
+        512
+      ],
+      "spacing": [
+        2.5,
+        0.689,
+        0.689
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "case": "case_00100",
+      "shape": [
+        470,
+        512,
+        512
+      ],
+      "spacing": [
+        1.0,
+        0.824,
+        0.824
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "case": "case_00150",
+      "shape": [
+        106,
+        512,
+        512
+      ],
+      "spacing": [
+        2.5,
+        0.742,
+        0.742
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "case": "case_00200",
+      "shape": [
+        103,
+        512,
+        512
+      ],
+      "spacing": [
+        4.0,
+        0.742,
+        0.742
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "case": "case_00250",
+      "shape": [
+        210,
+        512,
+        512
+      ],
+      "spacing": [
+        3.0,
+        0.822,
+        0.822
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "case": "case_00299",
+      "shape": [
+        624,
+        512,
+        512
+      ],
+      "spacing": [
+        0.5,
+        0.752,
+        0.752
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "case": "case_00400",
+      "shape": [
+        119,
+        512,
+        512
+      ],
+      "spacing": [
+        5.0,
+        0.811,
+        0.811
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "case": "case_00450",
+      "shape": [
+        90,
+        512,
+        512
+      ],
+      "spacing": [
+        5.0,
+        0.705,
+        0.705
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "case": "case_00500",
+      "shape": [
+        153,
+        512,
+        512
+      ],
+      "spacing": [
+        3.0,
+        0.977,
+        0.977
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "case": "case_00550",
+      "shape": [
+        37,
+        512,
+        512
+      ],
+      "spacing": [
+        5.0,
+        0.703,
+        0.703
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "case": "case_00588",
+      "shape": [
+        248,
+        512,
+        512
+      ],
+      "spacing": [
+        1.0,
+        0.682,
+        0.682
+      ],
+      "dtype": "uint8",
+      "orientation": "IPL",
+      "labels": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "slice_thickness_counts": {
+    "0.5": 45,
+    "1.0": 56,
+    "4.0": 6,
+    "3.0": 85,
+    "5.0": 223,
+    "2.5": 40,
+    "3.75": 3,
+    "2.0": 18,
+    "1.25": 5,
+    "1.5": 3,
+    "0.8": 1,
+    "2.14": 1,
+    "2.49": 2,
+    "2.19": 1
+  },
+  "histology_counts": {
+    "clear_cell_rcc": 310,
+    "papillary_rcc": 45,
+    "chromophobe_rcc": 38,
+    "angiomyolipoma": 8,
+    "rcc_unclassified": 4,
+    "oncocytoma": 26,
+    "spindle_cell_neoplasm": 2,
+    "mest": 3,
+    "clear_cell_papillary": 12,
+    "wilms_tumor": 3,
+    "transitional_cell_carcinoma": 17,
+    "multilocular_cystic_rcc": 2,
+    "other": 12,
+    "null": 6,
+    "cyst": 1
+  },
+  "disagreement_rate": 0.1
+}

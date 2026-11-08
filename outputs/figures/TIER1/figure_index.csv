@@ -1,0 +1,2 @@
+figure_id,title,generating_script,data_csv,png_path,split_used,n,tier,description
+C1_REPEAT_DICE,Module C: Multi-Reader Inter-Repeat Agreement (TIER1),repeats.py:generate_module_c_figures,/content/drive/MyDrive/KiTS23_Cert/outputs/figures/TIER1/C1_inter_repeat_dice_TIER1.csv,/content/drive/MyDrive/KiTS23_Cert/outputs/figures/TIER1/C1_inter_repeat_dice_TIER1.png,REPEATS,300,TIER1,"Distribution of pairwise Dice agreement across reader repeats 1, 2, and 3"

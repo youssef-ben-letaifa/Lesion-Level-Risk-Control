@@ -1,0 +1,4 @@
+case_id,crit_f1,crit_f2,tumor_size_cm,cohort
+case_00001,0.6,0.5,3.0,KiTS21
+case_00002,0.7,0.6,4.5,KiTS21
+case_00003,0.8,0.7,6.0,KiTS23

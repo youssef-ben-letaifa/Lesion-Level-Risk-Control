@@ -1,0 +1,33 @@
+{
+  "study_tier": "SMOKE",
+  "protocol_stage": "FROZEN_PHASE0_GATE_PASSED",
+  "gamma_primary": 0.5,
+  "alpha_grid": [
+    0.05,
+    0.1
+  ],
+  "lambda_grid_points": 60,
+  "tau_min": 0.35,
+  "smallest_effect_of_interest": 0.2,
+  "kidney_gate_choice": "open",
+  "p_mass_definition": "p_tumour + p_cyst",
+  "n_train": 293,
+  "n_cal": 98,
+  "decision_outcomes": {
+    "n_train": 293,
+    "n_cal_expected": 98,
+    "max_allowable_misses_exact_binom_alpha_05": 1,
+    "max_allowable_misses_exact_binom_alpha_10": 5,
+    "split_conformal_k_rank_alpha_05": 95,
+    "split_conformal_k_rank_alpha_10": 90,
+    "max_inf_floor_alpha_05": 3,
+    "max_inf_floor_alpha_10": 8,
+    "selected_gamma": 0.5,
+    "selected_tau_min": 0.35,
+    "selected_p_mass_def": "p_tumour + p_cyst",
+    "kidney_gate_choice": "open (whole scan with kidney prioritization)",
+    "smallest_effect_of_interest_fp_reduction": 0.2,
+    "decision_consequence": "Certification is feasible on KiTS23 at n_cal=98. Ensemble-aware families (F2\u2013F5) provide floors lower than single model F0. Study focuses on review burden minimization, shift (Module B) and repeats (Module C)."
+  },
+  "frozen_config_sha256": "aeb49d3a675f9c2b6e3e54e837af1e3b8373f69ef10cfe50706db9b5fc2b305e"
+}

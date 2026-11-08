@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KiTS23 Lesion-Level Risk Control Study Report (SMOKE)</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 30px; max-width: 1200px; margin: auto; color: #222; }
+        h1, h2, h3 { color: #1a365d; }
+        table { border-collapse: collapse; width: 100%; margin-top: 15px; margin-bottom: 25px; }
+        th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        th { background-color: #f7fafc; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; background: #ebf8ff; color: #2b6cb0; }
+        .alert { padding: 12px; background: #fffaf0; border-left: 4px solid #dd6b20; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Certifying Renal-Mass Detection in CT (KiTS23)</h1>
+    <p><span class="badge">TIER: SMOKE</span> <span class="badge">COMMIT: git_hash</span></p>
+    
+    <div class="alert">
+        <strong>Research Prototype Status:</strong> Benchmark and statistical certification protocol study. 
+        Pre-registered patient-level random partition (60/20/20). Calibration and Test labels unlocked under gatekeeping vault.
+    </div>
+
+    <h2>1. Executive Summary & Audit Baseline</h2>
+    <ul>
+        <li><strong>Total Cases Audited:</strong> 489</li>
+        <li><strong>Dataset Split:</strong> Train: 293, Calibration: 98, Test: 98</li>
+        <li><strong>Baseline Ensemble Dice (HEC 2 Masses):</strong> 0.82</li>
+        <li><strong>Baseline Tumour Dice (HEC 3):</strong> 0.78</li>
+    </ul>
+
+    <h2>2. Statistical Risk Certification Results (Calibration Split)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Family</th>
+                <th>Method</th>
+                <th>Target α</th>
+                <th>Status</th>
+                <th>λ*</th>
+                <th>Empirical Risk</th>
+                <th>Mean FP / Patient</th>
+                <th>Budget (≤2.0)</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td><strong>F1</strong></td>
+                <td>split_conformal</td>
+                <td>0.1</td>
+                <td style="color:green; font-weight:bold;">FEASIBLE</td>
+                <td>0.85</td>
+                <td>N/A</td>
+                <td>1.1</td>
+                <td style="color:green; font-weight:bold;">YES</td>
+            </tr>
+            
+            <tr>
+                <td><strong>F2</strong></td>
+                <td>split_conformal</td>
+                <td>0.05</td>
+                <td style="color:green; font-weight:bold;">FEASIBLE</td>
+                <td>0.92</td>
+                <td>N/A</td>
+                <td>1.6</td>
+                <td style="color:green; font-weight:bold;">YES</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <h2>3. Visualisations and Empirical Frontiers</h2>
+    
+            <div style="margin-bottom: 25px; border: 1px solid #ccc; padding: 12px; border-radius: 6px;">
+                <h4>D4: Risk-Burden Frontier</h4>
+                <p><em>Operating points and certified thresholds</em></p>
+                <img src="D4_operating_points_frontier_SMOKE.png" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="margin-bottom: 25px; border: 1px solid #ccc; padding: 12px; border-radius: 6px;">
+                <h4>E1: Re-splits Boxplots</h4>
+                <p><em>Realized risk distribution</em></p>
+                <img src="E1_resplits_boxplots_SMOKE.png" style="max-width: 100%; height: auto;" />
+            </div>
+            
+
+    <h2>4. Scope Boundaries & Limitations</h2>
+    <p>This study benchmarks distribution-free risk guarantees on surgical/ablation candidates from KiTS23. All patients have kidney tumours; hence patient-level specificity (false-alarm rate in healthy cohorts) cannot be estimated. Guarantees hold conditionally under exchangeability with the training and calibration distributions.</p>
+</body>
+</html>

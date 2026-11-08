@@ -1,0 +1,60 @@
+# Smoke tier configuration
+# Purpose: Fast end-to-end pipeline validation on Colab T4/V100 (< 1 hour)
+tier: SMOKE
+
+paths:
+  drive_root: /content/drive/MyDrive/KiTS23_Cert
+  data_dir: /content/dataset
+  dataset_zip: /content/dataset and kits23.zip
+  work_dir: /content/work
+  results_dir: /content/results
+  outputs_dir: /content/drive/MyDrive/KiTS23_Cert/outputs
+  logs_dir: /content/drive/MyDrive/KiTS23_Cert/logs
+  nnunet_raw: /content/work/nnUNet_raw
+  nnunet_preprocessed: /content/work/nnUNet_preprocessed
+  nnunet_results: /content/drive/MyDrive/KiTS23_Cert/results/nnUNet_results
+
+splits:
+  train_ratio: 0.60
+  cal_ratio: 0.20
+  test_ratio: 0.20
+  random_seed: 20261026
+  max_cases: 200  # Exactly 200 cases in the study as requested
+  smoke_subset_counts:
+    train: 12
+    cal: 4
+    test: 4
+
+model_pool:
+  dataset_name: Dataset501_KiTS23_Train
+  dataset_id: 501
+  configuration: 3d_fullres
+  num_epochs: 2  # Pipeline sanity check
+  members:
+    - name: ResEnc_M_seed1
+      preset: ResEnc_M
+      seed: 101
+      trainer_name: nnUNetTrainer_KiTS23_Smoke_s101
+      fold: "all"
+    - name: 3d_fullres_seed1
+      preset: original_3d_fullres
+      seed: 201
+      trainer_name: nnUNetTrainer_KiTS23_Smoke_s201
+      fold: "all"
+
+grid:
+  num_lambda_points: 10  # Fast compact grid for smoke check
+  min_threshold: 1.0e-5
+  max_threshold: 0.5
+  num_radius_points: 5
+  tau_min: 0.35
+  beta_f3: 1.0
+
+cert:
+  alpha_levels: [0.05, 0.10]
+  gamma_primary: 0.50
+  gamma_sensitivity: [0.10, 0.90]
+  fp_budget: 2.0
+  delta_ltt: 0.10
+  num_resplits: 50  # Fast for smoke
+  bootstrap_samples: 100
