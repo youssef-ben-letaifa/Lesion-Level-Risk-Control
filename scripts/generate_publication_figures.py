@@ -1,4 +1,4 @@
-"""Generates publication-quality figures directly in Artical_and_report/ from real study data."""
+"""Generates publication-quality figures directly in assets/ from real study data."""
 
 import os
 import sys
@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import seaborn as sns
 
-# Output directory: all images placed directly in Artical_and_report/
-OUT_DIR = os.path.abspath("Artical_and_report")
+# Output directory: all images placed directly in assets/
+OUT_DIR = os.path.abspath("assets")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # Set global publication styling
@@ -334,4 +334,4 @@ try:
 except Exception as e:
     print("Interface preview generation fallback:", e)
 
-print("[SUCCESS] All publication figures generated successfully in Artical_and_report/!")
+print("[SUCCESS] All publication figures generated successfully in assets/!")

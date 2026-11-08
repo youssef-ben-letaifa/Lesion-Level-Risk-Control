@@ -1,6 +1,6 @@
 """Generates additional high-resolution figures for the manuscript revision.
 
-Outputs directly into Artical_and_report/:
+Outputs directly into assets/:
 1. lesion_coverage_gamma.png - Illustration of operational definition gamma in {0.10, 0.50, 0.90}
 2. f0_f4_f5_comparison.png - Real CT slice qualitative comparison of F0 vs F4 vs F5
 3. froc_curve.png - FROC sensitivity vs FP lesions / patient
@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from scipy.ndimage import binary_dilation, generate_binary_structure
 
-OUT_DIR = os.path.abspath("Artical_and_report")
+OUT_DIR = os.path.abspath("assets")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 plt.rcParams.update({
@@ -313,4 +313,4 @@ plt.tight_layout()
 fig.savefig(os.path.join(OUT_DIR, "calibration_behavior.png"))
 plt.close(fig)
 
-print("[SUCCESS] All 5 revision figures successfully saved in Artical_and_report/!")
+print("[SUCCESS] All 5 revision figures successfully saved in assets/!")
