@@ -23,6 +23,6 @@ models/
 
 You can train new models using the provided Google Colab notebooks (`colab_notebook.ipynb` or `colabfull_notebook.ipynb`), or download pre-trained weights from the project's external storage / release page:
 
-- **Google Drive / Zenodo**: [KiTS23 Model Weights Archive](https://github.com) *(Insert release URL)*
+- **GitHub Releases / Zenodo**: [KiTS23 Model Weights Archive](https://github.com/youssef-ben-letaifa/Lesion-Level-Risk-Control/releases)
 - **Interactive Interface**: The web viewer (`python run_interface.py`) works immediately with precomputed predictions in `predictions_s101/` even before downloading full raw weights.
 

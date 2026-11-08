@@ -198,8 +198,8 @@ Then navigate to `http://localhost:5000` in any web browser.
 ### Environment Setup
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/kits23-risk-certification.git
-cd kits23-risk-certification
+git clone https://github.com/youssef-ben-letaifa/Lesion-Level-Risk-Control.git
+cd Lesion-Level-Risk-Control
 
 # 2. Create and activate a virtual environment
 python -m venv venv
